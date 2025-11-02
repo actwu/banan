@@ -9,18 +9,17 @@
     <link rel="preconnect" href="https://actwu.github.io">
       <link rel="preload" href="https://actwu.github.io/webset/genset.js" as="script">
 
-    <link rel="preload" href="https://actwu.github.io/webset/seoset.js" as="script">
-    
-
 </head>
 
 <body>
+  <main>
   <h1>Yo </</h1>
+  </main>
 </body>
   <script>
     const seoSet=()=>{const title=document.querySelector('title')?.textContent.trim()||'';const desc=document.querySelector('decs[content]')?.getAttribute('content').trim()||'';const author=document.querySelector('decs[content]')?.getAttribute('by')?.trim()||'Your Site or Author Name';const baseUrl=window.location.origin+window.location.pathname;const iconChars=title.split('').filter(c=>/[a-zA-Z0-9]/.test(c)).slice(0,2).join('')||'Ab';const keywords=Array.from(new Set((title.toLowerCase().match(/\bw+\b/g)||[]).concat(desc.toLowerCase().match(/\bw+\b/g)||[]))).slice(0,10).join(', ');const canonical=baseUrl;const ogImage=`${baseUrl}og-image.png`;const twitterSite='@yourtwitterhandle';const twitterCreator='@yourtwitterhandle';const orgName=author;const orgLogo=`${baseUrl}logo.png`;const setMeta=(name,content,prop=false)=>{let sel=prop?`meta[property="${name}"]`:`meta[name="${name}"]`;let el=document.querySelector(sel);if(!el){el=document.createElement('meta');if(prop)el.setAttribute('property',name);else el.setAttribute('name',name);document.head.appendChild(el);}el.setAttribute('content',content)};const setLink=(rel,href,type)=>{let el=document.querySelector(`link[rel="${rel}"]`);if(!el){el=document.createElement('link');el.setAttribute('rel',rel);if(type)el.setAttribute('type',type);document.head.appendChild(el);}el.setAttribute('href',href)};document.title=title||'Default Page Title';setMeta('description',desc||'Default page description');setMeta('keywords',keywords);setMeta('author',author);setMeta('robots','index, follow');setMeta('googlebot','index, follow');setMeta('referrer','no-referrer-when-downgrade');setLink('canonical',canonical);const svgIcon=encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='#000'/><text x='32' y='46' font-size='38' font-weight='700' text-anchor='middle' fill='#fff' font-family='Arial' letter-spacing='-1'>${iconChars}</text></svg>`);setLink('icon',`data:image/svg+xml,${svgIcon}`,'image/svg+xml');setMeta('og:title',title,true);setMeta('og:description',desc,true);setMeta('og:image',ogImage,true);setMeta('og:url',canonical,true);setMeta('og:type','website',true);setMeta('og:site_name',orgName,true);setMeta('og:locale','en_US',true);setMeta('twitter:card','summary_large_image');setMeta('twitter:title',title);setMeta('twitter:description',desc);setMeta('twitter:image',ogImage);setMeta('twitter:site',twitterSite);setMeta('twitter:creator',twitterCreator);setMeta('google-site-verification','');setMeta('msvalidate.01','');setLink('manifest','manifest.json');let ld=document.querySelector('script[type="application/ld+json"]');if(!ld){ld=document.createElement('script');ld.setAttribute('type','application/ld+json');document.head.appendChild(ld);}ld.textContent=JSON.stringify({"@context":"https://schema.org","@type":"Organization","name":orgName,"url":canonical,"logo":orgLogo,"description":desc});};seoSet();
   </script>
-  <script src="https://actwu.github.io/webset/seoset.js"></script>
+
     <script src="https://actwu.github.io/webset/genset.js"></script>
 
 </html>
